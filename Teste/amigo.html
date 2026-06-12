@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo?</title>
+
+```
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body{
+        background:#121212;
+        color:white;
+        min-height:100vh;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .caixa{
+        background:#1d1d1d;
+        padding:40px;
+        border-radius:15px;
+        text-align:center;
+        width:400px;
+
+        box-shadow:0 0 20px rgba(255,0,0,.3);
+    }
+
+    .simbolo{
+        font-size:70px;
+        color:red;
+        margin-bottom:20px;
+    }
+
+    input{
+        text-align:center;
+    }
+
+    #mensagem{
+        margin-top:15px;
+        color:#ff6b6b;
+    }
+</style>
+```
+
+</head>
+<body>
+
+```
+<div class="caixa">
+
+    <div class="simbolo">⛧</div>
+
+    <h2>Você é amigo ou inimigo?</h2>
+
+    <p>Somente aqueles que conhecem o código podem prosseguir.</p>
+
+    <input
+        type="password"
+        id="codigo"
+        class="form-control mb-3"
+        placeholder="Digite o código">
+
+    <button
+        class="btn btn-danger w-100"
+        onclick="verificarCodigo()">
+
+        Prosseguir
+
+    </button>
+
+    <div id="mensagem"></div>
+
+</div>
+
+<script>
+
+    function verificarCodigo(){
+
+        const codigo =
+            document.getElementById("codigo")
+            .value
+            .toLowerCase()
+            .trim();
+
+        if(codigo === "johan"){
+
+            window.location.href = "vilao.html";
+
+        }else{
+
+            document.getElementById("mensagem")
+            .innerHTML =
+            "Código incorreto. Observe os sinais espalhados pelo site.";
+
+        }
+
+    }
+
+</script>
+```
+
+</body>
+</html>
